@@ -2,6 +2,14 @@
 
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', function () {
-    return 'Hello, Word!!!' ;
+Route::get('/home', function () {
+    return view('home') ;
+});
+
+Route::get('/Contato', function () {
+    return view('Contato') ;
+});
+
+Route::get('/produtos', function () {
+    return view('produtos') ;
 });
