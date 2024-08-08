@@ -72,7 +72,7 @@ class VagaController extends Controller
         ]);
         Vaga::upgrade($request->all());
         return redirect()->route('vagas.index')
-        ->with('success', 'Vaga criada com sucesso.');
+        ->with('success', 'Vaga atualizada com sucesso.');
     }
 
     /**
