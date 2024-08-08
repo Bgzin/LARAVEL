@@ -67,7 +67,7 @@ class VagaController extends Controller
             'titulo' =>'required',
             'descricao' =>'required',
             'setor' =>'required',
-            'remuneracao' =>'required',
+            'remuneracao' =>'required|numeric',
             'empresa' =>'required'
         ]);
         Vaga::upgrade($request->all());
@@ -80,8 +80,11 @@ class VagaController extends Controller
      */
     public function destroy(Vaga $vaga)
     {
-       $vaga->delete().
-       return redirect()->route('vagas.index')
-       ->with('success', 'Vaga deletada com sucesso.');
+        $vaga->delete();
+
+
+        return redirect()->route('vagas.index')
+            ->with('success', 'Vaga Deletado com Sucesso.');
     }
 }
+
