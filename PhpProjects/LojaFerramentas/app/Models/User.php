@@ -48,17 +48,13 @@ class User extends Authenticatable
         ];
     }
 
-    // Verifica se o usuário é um administrador
-    public function isAdmin()
-    {
+    //verifica se o usuário é um administrador
+    public function isAdm(){
         return $this->tipo_usuario === 'administrador';
     }
 
-
-    // Verifica se o usuário é um cliente
-    public function isClient()
-    {
+    //verifica se o usuário é cliente
+    public function isClient(){
         return $this->tipo_usuario === 'cliente';
     }
-
 }

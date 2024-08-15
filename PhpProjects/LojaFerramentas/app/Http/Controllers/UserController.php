@@ -1,5 +1,3 @@
-
-
 <?php
 
 
@@ -19,19 +17,19 @@ class UserController extends Controller
     // Exibir o formulário de login
     public function showLoginForm()
     {
-        return view('usuario.login');
+        return view('usuarios.login');
     }
 
 
     // Processar o login do usuário
-    public function login(Request $request)
+    public function login(Request $request) //classe request se conecta no navegador, recebe e armazena, efetuando uma validação das informações 
     {
         $credentials = $request->validate([
             'email' => ['required', 'email'],
             'password' => ['required'],
         ]);
 
-
+        // no if abaixo é para efetuar a validação dentro do banco de dados com os registros cadastrados
         if (Auth::guard('web')->attempt($credentials)) {
             $request->session()->regenerate();
             return redirect()->intended('/dashboard');
@@ -47,7 +45,7 @@ class UserController extends Controller
     // Exibir o formulário de registro
     public function showRegistroForm()
     {
-        return view('usuario.registro');
+        return view('usuarios.registro'); //informar rota das páginas para que no web.php (routes), quando clicarmos no botão de registro puxar as informações
     }
 
 
@@ -61,14 +59,14 @@ class UserController extends Controller
         ]);
 
 
-        $User = User::create([
+        $usuario = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
 
 
-       // Auth::login($User);
+        Auth::login($usuario);
 
 
         return redirect('/dashboard');
@@ -81,8 +79,9 @@ class UserController extends Controller
         Auth::logout();
 
 
-        $request->session()->invalidate();
         $request->session()->regenerateToken();
+        $request->session()->invalidate();
+        $request->session()->regenerate(); //não é obrigatório
 
 
         return redirect('/');
