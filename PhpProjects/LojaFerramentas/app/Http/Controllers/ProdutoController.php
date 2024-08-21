@@ -1,43 +1,36 @@
 <?php
 
-
 namespace App\Http\Controllers;
 
-
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Models\Produto;
-
 
 class ProdutoController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * lista todos os produtos
+     * contem uma tabela e nessa tabela irá listar todos os produtos que contém no banco de dados
      */
-    //lista todos os produtos
     public function index()
     {
-        $produtos = Produto::all();
-        return view('produtos.index',compact('produtos'));
-
-
+        $produtos = Produto::all();// essa variavel recebe todos os produtos cadastrado no banco de dados utilizando esse metodo all
+         return view('produtos.index',compact('produtos')); //esse compact prondutos, buscas todos os produtos do model pois o model esta ligado diretamente com o banco de dados
     }
 
-
     /**
-     * Show the form for creating a new resource.
+     * abre o formulario de cadastro
      */
-    //abre o formulario de cadastro
+    //quando chamamos a create ele vai exibir o formulario para preenchermos
     public function create()
     {
         return view('produtos.create');
     }
 
-
     /**
-     * Store a newly created resource in storage.
+     * armazena/envia o formulario de cadastro
      */
-    // envia o formulario de cadastro
+    //após o create ele vai validar as informações a partir do store, e em seguida enviar as informações para o banco de dados
     public function store(Request $request)
     {
         $request->validate([
@@ -48,27 +41,23 @@ class ProdutoController extends Controller
             'preco'=> 'required|numeric',
         ]);
 
-
         Produto::create($request->all());
 
-
-        return redirect()->route('produtos.index')->
-        with('sucess','Produto Criado com Sucesso');
+        return redirect()->route('produtos.index')-> 
+        with('success','Produto criado com sucesso');
     }
 
+    
 
     /**
-     * Show the form for editing the specified resource.
+     * vai abrir todas as informações do produto para que possamos efetuar a edição do mesmo
      */
     public function edit(Produto $produto)
     {
         return view('produtos.edit',compact('produto'));
     }
 
-
-    /**
-     * Update the specified resource in storage.
-     */
+    
     public function update(Request $request, Produto $produto)
     {
         $request->validate([
@@ -79,18 +68,13 @@ class ProdutoController extends Controller
             'preco'=> 'required|numeric',
         ]);
 
+        $produto->update($request->all()); //coletando o produto e efetuando um update/atualização das informações do produto
 
-        $produto->update($request->all());
-
-
-        return redirect()->route('produtos.index')->
-        with('sucess','Produto Atualizado com Sucesso');
+        return redirect()->route('produtos.index')-> 
+        with('sucess','Produto atualizado com sucesso');
     }
 
-
-    /**
-     * Remove the specified resource from storage.
-     */
+    
     public function destroy(Produto $produto)
     {
         $produto->delete();
@@ -98,5 +82,10 @@ class ProdutoController extends Controller
 
         return redirect()->route('produtos.index')->
         with('sucess','Produto Deletado com Sucesso');
+    }
+
+    //mostrar os produtos em produtocontroller
+    public function show(Produto $produto){
+        return view('produtos.show',compact('produto'));
     }
 }

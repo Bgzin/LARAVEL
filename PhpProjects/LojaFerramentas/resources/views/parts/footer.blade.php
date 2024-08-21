@@ -1,7 +1,7 @@
-<div class ="container-flex">
+<div class="container-flex">
     <br>
     <hr>
     meu footer
-    <br>
+    <hr>
     <br>
 </div>

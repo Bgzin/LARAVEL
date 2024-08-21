@@ -22,7 +22,6 @@
         <tr>
             <th>No</th>
             <th>Nome</th>
-            <th>Descrição</th>
             <th>Categoria</th>
             <th>Quantidade</th>
             <th>Preço</th>
@@ -32,13 +31,11 @@
         <tr>
             <td>{{ $loop->iteration }}</td>
             <td>{{ $produto->nome }}</td>
-            <td>{{ $produto->descricao }}</td>
             <td>{{ $produto->categoria}}</td>
             <td>{{ $produto->quantidade}}</td>
             <td>{{ $produto->preco }}</td>
             <td>
                 <form action="{{ route('produtos.destroy', $produto->id) }}" method="POST">
-                    <a class="btn btn-info" href="{{ route('produtos.show', $produto->id) }}">Mostrar</a>
                     <a class="btn btn-primary" href="{{ route('produtos.edit', $produto->id) }}">Editar</a>
 
 

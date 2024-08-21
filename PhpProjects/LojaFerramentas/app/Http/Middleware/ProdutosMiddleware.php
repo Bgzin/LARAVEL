@@ -3,7 +3,6 @@
 namespace App\Http\Middleware;
 
 use Closure;
-use Illuminate\Container\Attributes\Auth;
 use Illuminate\Http\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Auth;
@@ -17,11 +16,13 @@ class ProdutosMiddleware
      */
     public function handle(Request $request, Closure $next): Response
     {
-        if(Auth::check() && Auth::user()->tipo_usuario === 'administrador')
-        return $next($request);
-
-        //se nao for uma empresa, redireciona com uma mensagem de erro
-        return redirect()->route('home')->
-        withErrors(['acess' => ' Voce nao tem permissao para acessar essa área']);
+        if(Auth::check() && Auth::user()->tipo_usuario ==='administrador'){ //faz o checking se foi feito o login, e o tipo de usuario
+            return $next($request);
+        }
+        
+        //se não for uma empresa, redireciona com a mensagem de erro
+        return redirect()->route('')->
+        withErrors(['access' => 'Você não tem permissão para acessar essa área']);
+        
     }
 }
