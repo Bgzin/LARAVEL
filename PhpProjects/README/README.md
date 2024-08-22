@@ -164,7 +164,7 @@ Diagrama de Classes para o Sistema de Ger enciamento de Projetos
 Relacionamentos
 1.	User e Admin
 	Admin é uma especialização de User, herdando todos os atributos e métodos da classe User. A classe Admin possui métodos adicionais para a gestão de projetos.
-  
+
 2.	User e Projeto
 	Relacionamento muitos-para-muitos entre User e Projeto, mediado pela tabela pivot participacoes. Em Laravel, isso é gerenciado através do método belongsToMany() do Eloquent.
 
@@ -173,3 +173,55 @@ Relacionamentos
 
 4.	User e Participacao
 	Um User pode ter várias entradas na tabela Participacao, representando suas inscrições em diferentes projetos.
+
++--------------------+
+|        User        |
++--------------------+
+| - id: int          |
+| - name: string     |
+| - email: string    |
+| - password: string |
++--------------------+
+| + login() : boolean |
+| + visualizarProjetos() : Collection<Projeto> |
+| + seInscreverProjeto(projeto: Projeto) : void |
+| + finalizarInscricao(projeto: Projeto) : void |
++--------------------+
+         ^
+         |
+         |
++--------------------+
+|       Admin        |
++--------------------+
+|                    |
++--------------------+
+| + adicionarProjeto(projeto: Projeto) : void |
+| + excluirProjeto(projeto: Projeto) : void |
+| + editarStatusProjeto(projeto: Projeto, status: string) : void |
+| + verParticipantesProjeto(projeto: Projeto) : Collection<User> |
++--------------------+
+
++--------------------+
+|      Projeto       |
++--------------------+
+| - id: int          |
+| - nome: string     |
+| - descricao: string|
+| - status: string   |
++--------------------+
+| + atualizarStatus(status: string) : void |
+| + getParticipantes() : Collection<User> |
++--------------------+
+         ^
+         |
+         |
++--------------------+
+|   Participacao     |
++--------------------+
+| - id: int          |
+| - user_id: int     |
+| - projeto_id: int  |
+| - status: string   |
++--------------------+
+| + alterarStatus(status: string) : void |
++--------------------+
