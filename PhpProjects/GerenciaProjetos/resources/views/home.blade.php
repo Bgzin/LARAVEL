@@ -13,9 +13,8 @@
             <li>Criação e atribuição de tarefas</li>
             <li>Controle de progresso de projetos</li>
             <li>Comunicação em equipe</li>
-            <li>Relatórios e análises</li>
         </ul>
-        <a class="btn btn-primary btn-lg" href="#" role="button">Saiba mais</a>
+        <a class="btn btn-primary btn-lg" href="#" role="button">Em progresso</a>
     </div>
 </div>
 

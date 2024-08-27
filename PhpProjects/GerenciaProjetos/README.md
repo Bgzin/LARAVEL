@@ -18,6 +18,8 @@ Adicionar Projetos: O Gerente cria novos projetos.
 Consultar Projetos e Status do Projeto: O Gerente visualiza a lista de projetos e seus status.
 Excluir Projetos: O Gerente exclui projetos existentes.
 Editar o Status de Projetos: O Gerente altera o status dos projetos.
+
+---------------------------------------------------------------------
 Diagrama de Fluxo de Processo – Gerenciamento de Projetos
 Início
 
@@ -26,12 +28,12 @@ Usuário/Gerente
 Credenciais válidas?
 Sim: Continuar.
 Não: Exibir mensagem de erro.
+
 Usuário:
-
 Visualizar Projetos: O usuário visualiza os projetos disponíveis.
-Se Inscrever/Finalizar em projetos já existentes: O usuário se inscreve ou finaliza sua inscrição em projetos.
-Gerente:
+Se Inscrever/Finalizar  projetos já existentes: O usuário se inscreve ou finaliza sua inscrição em projetos.
 
+Gerente:
 Ver Participantes dos Projetos: O Gerente visualiza os participantes dos projetos.
 Visualizar Projetos: O Gerente visualiza os projetos disponíveis.
 Ver/Editar Status dos Projetos: O Gerente visualiza e altera o status dos projetos.
