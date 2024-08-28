@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Livros</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerenciamento de Livros</h1>
+
+        <!-- Formulário para adicionar um novo livro -->
+        <section id="add-book">
+            <h2>Adicionar Livro</h2>
+            <form id="add-book-form">
+                <label for="title">Título:</label>
+                <input type="text" id="title" name="title" required>
+                <label for="author">Autor:</label>
+                <input type="text" id="author" name="author" required>
+                <label for="ano">Ano:</label>
+                <input type="text" id="ano" name="ano" required>
+                <label for="genero">Gênero:</label>
+                <input type="text" id="genero" name="genero">
+                <button type="submit">Adicionar Livro</button>
+            </form>
+        </section>
+
+        <!-- Formulário para atualizar um livro existente -->
+        <section id="update-book">
+            <h2>Atualizar Livro</h2>
+            <form id="update-book-form">
+                <label for="book-id">ID do Livro:</label>
+                <input type="text" id="book-id" name="book-id" required>
+                <label for="new-title">Novo Título:</label>
+                <input type="text" id="new-title" name="new-title">
+                <label for="new-author">Novo Autor:</label>
+                <input type="text" id="new-author" name="new-author">
+                <label for="new-ano">Novo Ano:</label>
+                <input type="text" id="new-ano" name="new-ano">
+                <label for="new-genero">Novo Gênero:</label>
+                <input type="text" id="new-genero" name="new-genero">
+                <button type="submit">Atualizar Livro</button>
+            </form>
+        </section>
+
+        <!-- Formulário para deletar um livro -->
+        <section id="delete-book">
+            <h2>Deletar Livro</h2>
+            <form id="delete-book-form">
+                <label for="delete-id">ID do Livro:</label>
+                <input type="text" id="delete-id" name="delete-id" required>
+                <button type="submit">Deletar Livro</button>
+            </form>
+        </section>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
