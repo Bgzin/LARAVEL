@@ -25,7 +25,7 @@ export default function LoginPage() {
     if (response.ok) {
       const { token } = await response.json();
       localStorage.setItem('token', token);
-      router.push('/todos');
+      router.push('/tasks');
     } else {
       setError('Credenciais inválidas');
     }

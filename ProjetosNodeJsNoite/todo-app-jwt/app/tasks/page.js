@@ -1,4 +1,3 @@
-
 'use client';
 
 
@@ -24,6 +23,7 @@ export default function TasksPage() {
 
 
       const response = await fetch('/api/tasks', {
+	  
         headers: {
           Authorization: `Bearer ${token}`,
         },

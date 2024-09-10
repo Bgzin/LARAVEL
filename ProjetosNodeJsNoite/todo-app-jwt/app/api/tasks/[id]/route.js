@@ -1,6 +1,5 @@
 import { updateTask, deleteTask } from "@/controllers/TaskController"
 import { NextResponse } from "next/server"
-import { deleteTask } from "@/controllers/TaskController";
 
 
 export async function PUT(request, { params }) {
