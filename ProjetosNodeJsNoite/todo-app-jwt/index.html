@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Inicial</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #000000;
+            color: #FFD700;
+            font-family: Arial, sans-serif;
+        }
+        header {
+            background-color: #003366;
+            color: #FFD700;
+            padding: 20px;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo-space {
+            margin-left: 50px; /* Espaço reservado para a logo */
+        }
+        .logo-space img {
+            width: 60px; /* Ajuste o tamanho da logo conforme necessário */
+            /* Opcional: Use `width` em vez de `height` se a logo precisar manter proporções específicas */
+        }
+        .nav-buttons {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex: 1;
+        }
+        .nav-buttons li {
+            margin: 0 15px;
+        }
+        .nav-buttons a {
+            color: #FFD700;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .nav-buttons a:hover {
+            text-decoration: underline;
+        }
+        .content {
+            padding: 80px 20px 60px; /* Ajusta o padding para o header e o footer */
+            text-align: center;
+        }
+        footer {
+            background-color: #003366;
+            color: #FFD700;
+            padding: 10px 0;
+            text-align: center;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-space">
+            <!-- Logo de exemplo -->
+            <img src="img/image.png" alt="Logo">
+        </div>
+        <nav>
+            <ul class="nav-buttons">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#login">Login</a></li>
+                <li><a href="#registro">Registro</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content">
+        <h1>Bem-vindo à Página Inicial</h1>
+        <!-- Conteúdo adicional pode ser adicionado aqui -->
+    </div>
+
+    <footer>
+        <p>&copy;                                              Instragram@      Twitter(X)       Facebook                                somos a xxxxxxxxxxxxxxxx, nossa missao é bla bla bla bla                                    ajudar a voce assistir os lançamentos mais recentes                                                sem sair da sua casa, comprou é so ir .</p>
+    </footer>
+</body>
+</html>
