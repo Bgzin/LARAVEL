@@ -57,8 +57,7 @@ public class Main {
                                     "Inserir novo Aluno?\n"
                                      +"1 = Sim\n"
                                      +"2 = Não").equals("1")?true:false;
-
-                            } while (novoAluno);
+                                    } while (novoAluno);
                         }
                       }
                    } catch (Exception e) {
